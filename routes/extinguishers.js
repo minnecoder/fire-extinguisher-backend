@@ -36,9 +36,20 @@ module.exports = server => {
         return next(new errors.InvalidContentError("Expects 'application/json'"));
       }
 
-      const { number, location, brand, type, size, six_yr_test, twelve_yr_test, notes } = req.body;
+      const {
+        site_id,
+        number,
+        location,
+        brand,
+        type,
+        size,
+        six_yr_test,
+        twelve_yr_test,
+        notes
+      } = req.body;
 
       const extinguisher = new Extinguisher({
+        site_id,
         number,
         location,
         brand,

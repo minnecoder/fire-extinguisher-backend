@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 const timestamp = require("mongoose-timestamp");
 
 const ExtinguisherSchema = new mongoose.Schema({
+  site_id: {
+    type: Number,
+    required: true
+  },
   number: {
     type: Number,
     required: true

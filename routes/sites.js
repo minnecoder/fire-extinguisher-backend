@@ -37,6 +37,7 @@ module.exports = server => {
       }
 
       const {
+        site_id,
         name,
         address,
         city,
@@ -48,6 +49,7 @@ module.exports = server => {
       } = req.body;
 
       const site = new Site({
+        site_id,
         name,
         address,
         city,

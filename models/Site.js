@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 const timestamp = require("mongoose-timestamp");
 
 const SiteSchema = new mongoose.Schema({
+  site_id: {
+    type: Number,
+    required: true
+  },
   name: {
     type: String,
     required: true

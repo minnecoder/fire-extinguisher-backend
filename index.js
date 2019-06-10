@@ -18,5 +18,8 @@ db.on("error", err => console.log(err));
 db.once("open", () => {
   require("./routes/customers")(server);
   require("./routes/employees")(server);
+  require("./routes/extinguishers")(server);
+  require("./routes/sites")(server);
+  require("./routes/site-report")(server);
   console.log(`Server started on port ${config.PORT}`);
 });
