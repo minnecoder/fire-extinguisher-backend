@@ -6,11 +6,11 @@ module.exports = server => {
   // Get Site Report for single site
   server.get("/site-report/:id", async (req, res, next) => {
     try {
-      const data = [];
+      const data = {};
       const site = await Site.findOne({ site_id: req.params.id });
-      data.push(site);
+      data.site = site;
       const extinguishers = await Extinguisher.find({ site_id: req.params.id });
-      data.push(extinguishers);
+      data.extinguishers = extinguishers;
       res.send(data);
 
       next();
